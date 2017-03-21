@@ -1,0 +1,67 @@
+/* Empty. Add your own CSS if you like */
+.mc-bg {
+    background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: left top;
+	background-size: cover;
+    padding-top:70px;
+}
+
+.bg-img1 {
+    background-image: url('../img/mc1.jpg');
+}
+
+.bg-img2 {
+    background-image: url('../img/mc2.jpg');
+}
+
+.bg-img3 {
+    background-image: url('../img/mc3.jpg');
+}
+
+.bg-img4 {
+    background-image: url('../img/mc4.jpg');
+}
+
+.bg-img5 {
+    background-image: url('../img/mc5.jpg');
+}
+
+.bg-img6 {
+    background-image: url('../img/mc6.jpg');
+}
+
+img.responsive{
+    width: 100%;
+    height: auto;
+    padding-left:20px;
+    padding-right:20px;
+}
+
+.minecraft-button{
+    background-image: url('../img/textures/button_texture.jpg');
+    background-size: 100% 200%;
+    text-align:center;
+    color:#e0e0e0;
+    font-family: "Minecraft";
+    font-size:20pt;
+    border-left: 2px solid #e0e0e0;
+    border-top: 2px solid #e0e0e0;
+    border-right: 2px solid #565656;
+    border-bottom: 2px solid #565656;
+    outline:2px solid #000;
+    text-shadow:3px 3px 0 #000;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+}
+
+.divider-button {
+    float:right;
+    min-height: 0px;
+    min-width: 0px;
+    line-height: 0px;
+}
+
+.vert-align {
+    vertical-align: middle;
+}

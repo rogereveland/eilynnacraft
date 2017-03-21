@@ -1,0 +1,17 @@
+<ion-view hide-nav-bar="true">
+    <ion-pane class="mc-bg" id="bg-pane" ng-class="bgImage">
+        <div class="row">
+            <div class="col-10">
+            </div>
+            <div class="col-80">
+                <ion-list>
+                    <ion-item class="minecraft-button" ng-repeat="item in checklist.items" ng-click="toggleComplete(item)">
+                        <img src="img/diamond_checked.png" class="vert-align" ng-show="item.completed == 1"> 
+                        <img src="img/diamond_unchecked.png" class="vert-align" ng-show="item.completed == 0"> 
+                        {{item.item_name}} {{item.item_time}}
+                    </ion-item>
+                </ion-list>
+            </div>
+        </div>
+    </ion-pane>
+</ion-view>

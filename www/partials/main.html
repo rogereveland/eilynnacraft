@@ -1,0 +1,37 @@
+<ion-view hide-nav-bar="true">
+    <ion-pane class="mc-bg" ng-class="bgImage">
+        <img class="responsive" src="img/EilynnaCraft.png">
+        <div class="row">
+            <div class="col col-20">
+                &nbsp;
+            </div>
+            <div class="col col-60">
+                <ion-list>
+                    <ion-item class="minecraft-button" ng-click="openChecklist()">
+                        Eilynna's Schedule
+                    </ion-item>
+                    <ion-item class="minecraft-button" ng-click="checkGrownup($event)">
+                        Grown-up Tools
+                    </ion-item>
+                </ion-list>
+            </div>
+        </div>        
+    </ion-pane>
+    <script id="my-popover.html" type="text/ng-template">
+        <ion-popover-view>
+            <ion-header-bar>
+                <h1 class="title">Verification</h1>
+            </ion-header-bar>
+            <ion-content class="has-header padding">
+                <label class="item item-input">
+                    <span class="input-label">What is {{verify.base}} squared?</span>
+                    <input type="text" placeholder="Answer" ng-model="verify.answer">
+                </label>
+                <br>
+                <button class="button button-balanced button-block" ng-click="checkAnswer()">
+                    Verify
+                </button>
+            </ion-content>
+        </ion-popover-view>
+    </script>
+</ion-view>

@@ -1,0 +1,91 @@
+<ion-view view-title="Checklist Edit">
+    
+    <ion-nav-buttons side="right">
+        <button class="button" ng-click="openModal()">
+        	<i class="ion-plus-round"></i>
+        </button>
+        &nbsp;&nbsp;
+        <button class="button" ng-click="loadTemplate()">
+            <i class="ion-ios-cloud-download-outline"></i>
+        </button>
+        &nbsp;&nbsp;
+        <button class="button" ng-click="saveTemplate()">
+            <i class="ion-ios-cloud-upload-outline"></i>
+        </button>
+    </ion-nav-buttons>
+    <ion-content>        
+        <div class="row">
+            <div class="col">
+                <ion-item class="item-divider">
+                    Checklist Items
+                    <button class="button-clear button-assertive button divider-button" ng-click="toggleDeletion()"><i class="ion-ios-trash"></i></button>
+                    
+                    <button class="button-clear button-positive button divider-button" ng-click="toggleReordering()"><i class="ion-navicon"></i></button>
+                    
+                </ion-item>
+                <ion-list show-reorder="shouldShowReorder" show-delete="shouldShowDelete">                    
+                    <ion-item ng-repeat="item in checklist.items" ng-click="editItem(item)">
+                        {{item.item_name}}
+                        <ion-reorder-button class="ion-navicon" on-reorder="reorderItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+                        <ion-delete-button class="ion-minus-circled" ng-click="deleteItem(item);"></ion-delete-button>
+                    </ion-item>
+                </ion-list>
+            </div>
+            <div class="col">
+                <div class="list">
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Checklist Name</span>
+                        <input type="text" ng-model="checklist.checklist_name">
+                    </label>
+                    <label class="item item-input item-stacked-label">
+                        <span class="input-label">Checklist Date</span>
+                        <input type="text" ng-model="checklist.checklist_date" ng-focus="openDatePicker()">
+                    </label>
+                    <div class="item">
+                        <button class="button button-calm button-block" ng-click="saveChecklist()">
+                            Save
+                        </button>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <script id="my-modal.html" type="text/ng-template">
+            <ion-modal-view>
+                <ion-header-bar>
+                    <h1 class="title">Edit Checklist Item</h1>
+                </ion-header-bar>
+                <ion-content class="padding">
+                    <ion-list>
+                        <ion-item>
+                            <label class="item item-input item-stacked-label">
+                                <span class="input-label">Item Name</span>
+                                <input type="text" ng-model="editingItem.item_name">
+                            </label>
+                        </ion-item>
+                        <ion-item>
+                            <label class="item item-input item-stacked-label">
+                                <span class="input-label">Points</span>
+                                <input type="number" ng-model="editingItem.points" min="0">
+                            </label>
+                        </ion-item>
+                        <ion-item>
+                            <label class="item item-input item-stacked-label">
+                                <span class="input-label">Item Time</span>
+                                <input type="text" ng-model="editingItem.item_time">
+                            </label>
+                        </ion-item>
+                        <ion-item>
+                            <button class="button button-assertive" ng-click="closeModal()">
+                                Cancel
+                            </button>
+                            <button class="button button-balanced" ng-click="saveItem()">
+                                Save
+                            </button>
+                        </ion-item>
+
+                    </ion-list>
+                </ion-content>
+            </ion-modal-view>
+        </script>
+    </ion-content>
+</ion-view>
